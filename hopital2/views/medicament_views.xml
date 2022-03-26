@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="hopital2_medicament_action" model="ir.actions.act_window">
+        <field name="name">Medicament</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hopital2.medicament</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="hopital2_medicament_tree" model="ir.ui.view">
+        <field name="name">hopital2.medicament.tree</field>
+        <field name="model">hopital2.medicament</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des medicament">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+    <record id="hopital2_medicament_search" model="ir.ui.view">
+        <field name="model">hopital2.medicament</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                 <field name="code"/>
+            </search>
+        </field>
+    </record>
+    <record id="hopital2_medicament_form" model="ir.ui.view">
+        <field name="name">hopital2.medicament.form</field>
+        <field name="model">hopital2.medicament</field>
+        <field name="arch" type="xml">
+            <form string="Détail d'un medicament">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="consultation_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <menuitem
+        name="hopital2"
+        id="menu_hotipal2_root"/>
+
+
+
+    <menuitem
+        id="menu_hopital2_medicament"
+        name="Medicament"
+        parent="menu_hotipal2_root"
+        action="hopital2_medicament_action"
+        sequence="7"/>
+
+</odoo>

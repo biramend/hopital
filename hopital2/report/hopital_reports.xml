@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report 
+        string="Fiche Patient" 
+        id="report_hopital_patient" 
+        model="hopital2.patient" 
+        report_type="qweb-pdf"
+        menu="True"
+        name="hopital2.report_hopitalpatient" 
+        file="hopital2.report_hopitalpatient"
+    />
+</odoo>

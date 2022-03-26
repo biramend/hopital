@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="hopital2_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hopital2.patient</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="hopital2_patient_tree" model="ir.ui.view">
+        <field name="name">hopital2.patient.tree</field>
+        <field name="model">hopital2.patient</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des patients">
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="date"/> 
+            </tree>
+        </field>
+    </record>
+    <record id="hopital2_patient_search" model="ir.ui.view">
+        <field name="model">hopital2.patient</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="lastname"/>
+                <field name="date"/> 
+            </search>
+        </field>
+    </record>
+    <record id="hopital2_patient_form" model="ir.ui.view">
+        <field name="name">hopital2.patient.form</field>
+        <field name="model">hopital2.patient</field>
+        <field name="arch" type="xml">
+            <form string="Détail d'un patient">
+                <sheet>  
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="lastname"/>
+                            <field name="email"/>
+                            <field name="address"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="age"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Consultations">
+                            <field name="consultation_ids">
+                                <tree>
+                                    <field name="name"/> 
+                                    <field name="date"/>
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <field name="name"/> 
+                                            
+                                            <field name="date"/>
+                                            <field name="medecin_id"/>
+                                            <field name="medicament_ids"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <menuitem
+        name="hopital2"
+        id="menu_hotipal2_root"/>
+
+    <menuitem
+        id="menu_hopital2_patient"
+        name="Patient"
+        parent="menu_hotipal2_root"
+        action="hopital2_patient_action"
+        sequence="5"/>
+
+</odoo>

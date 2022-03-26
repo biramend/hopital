@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report 
+        string="Fiche Consultation" 
+        id="report_hopital_consultation" 
+        model="hopital2.consultation" 
+        report_type="qweb-pdf"
+        menu="True"
+        name="hopital2.report_hopitalconsultation" 
+        file="hopital2.report_hopitalconsultation"
+    />
+</odoo>

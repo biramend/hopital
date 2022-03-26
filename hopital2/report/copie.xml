@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_hopitalconsultation_document">
+
+    <t t-call="web.external_layout">
+        <div class="page" style="padding-top: 25px; float: right;">
+            <p>Dakar le : <span t-field="o.date"/></p><br/>
+        </div>
+        <h3 style="text-align:center;color:#009FE3;margin-top:50px;">Ordonnance</h3>
+        <div class="row">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th class="text-center"><strong>N°</strong></th>
+                        <th class="text-center"><strong>Medicament</strong></th>
+                        <th class="text-center"><strong>Quantité</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="o.medicament_ids" t-as="medicament"> 
+                        <td class="text-center">
+                            <span t-esc="medicament_index + 1"/>
+                        </td>
+                        
+                        <td class="text-center">
+                            <span t-esc="medicament.name" />
+                        </td>
+                        <td class="text-center">
+                            <span t-esc="medicament.code" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</template>
+
+
+<template id="report_hopitalconsultation">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="hopital2.report_hopitalconsultation_document"/>
+        </t>
+    </t>
+</template>
+
+
+</odoo>

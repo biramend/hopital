@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="hopital2_medecin_action" model="ir.actions.act_window">
+        <field name="name">Medecin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hopital2.medecin</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="hopital2_medecin_tree" model="ir.ui.view">
+        <field name="name">hopital2.medecin.tree</field>
+        <field name="model">hopital2.medecin</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des medecins">
+                <field name="matricule"/>
+                <field name="name"/> 
+            </tree>
+        </field>
+    </record>
+    <record id="hopital2_medecin_search" model="ir.ui.view">
+        <field name="model">hopital2.medecin</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="matricule"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    <record id="hopital2_medecin_form" model="ir.ui.view">
+        <field name="name">hopital2.medecin.form</field>
+        <field name="model">hopital2.medecin</field>
+        <field name="arch" type="xml">
+            <form string="Détail d'un medecin">
+                <sheet>  
+                    <group>
+                        <group>
+                            <field name="matricule"/>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    
+    <menuitem
+        name="hopital2"
+        id="menu_hotipal2_root"/>
+
+    <menuitem
+        id="menu_hopital2_medecin"
+        name="Medecin"
+        parent="menu_hotipal2_root"
+        action="hopital2_medecin_action"
+        sequence="4"/>
+
+</odoo>

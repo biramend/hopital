@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hopital2_patient,access.hopital2.patient,model_hopital2_patient,,1,1,1,1
+access_hopital2_medecin,access.hopital2.medecin,model_hopital2_medecin,,1,1,1,1
+access_hopital2_consultation,access.hopital2.consultation,model_hopital2_consultation,,1,1,1,1
+access_hopital2_medicament,access.hopital2.medicament,model_hopital2_medicament,,1,1,1,1

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="hopital_medecin_action" model="ir.actions.act_window">
+        <field name="name">Conger</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hopital.conger</field>
+        <field name="search_view_id" eval="False"/>
+        <field name="view_id" eval="False"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p>
+        </field>
+    </record>
+    <record id="hopital_conger_tree" model="ir.ui.view">
+        <field name="name">hopital.conger.tree</field>
+        <field name="model">hopital.conger</field>
+        <field name="arch" type="xml">
+            <tree string="La liste des congers">
+                <field name="start_date"/>
+                <field name="end_date"/> 
+                <field name="medecin_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="hopital_conger_search" model="ir.ui.view">
+        <field name="model">hopital.conger</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </search>
+        </field>
+    </record>
+    <record id="hopital_conger_form" model="ir.ui.view">
+        <field name="name">hopital.conger.form</field>
+        <field name="model">hopital.conger</field>
+        <field name="arch" type="xml">
+            <form string="Détail d'un conger">
+                <header>
+                    <button
+
+                        name="actions_holiday_request"
+                        states = "brouillon"
+                        string="Soumettre la demande"
+                        type="object"
+                        icon ="fa-folder"
+                        class="os_highlight"
+                        >
+                     <field name="state" widget="statusbar" readonly="1">    
+                </header> 
+                <sheet>  
+                    <group>
+                        <group>
+                            <field name="matricule"/>
+                            <field name="end_date"/>
+                            <field name="number_of_day"/>
+                            <field name="medecin_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <menuitem
+        id="menu_hopital_conger"
+        name="conger"
+        parent="menu_hotipal_root"
+        action="hopital_conger_action"
+        sequence="7"/>
+
+</odoo>
