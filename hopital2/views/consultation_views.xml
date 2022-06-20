@@ -42,6 +42,8 @@
                             <field name="name" readonly="1"/>
                             <field name="date"/>
                             <field name="date_prochaine_consultation"/>
+                        </group>
+                        <group>
                             <field name="patient_id"/>
                             <field name="medecin_id"/>
                             <field name="medicament_ids" widget="many2many_tags"/>

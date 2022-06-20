@@ -18,7 +18,7 @@
         <field name="arch" type="xml">
             <tree string="La liste des medecins">
                 <field name="matricule"/>
-                <field name="name"/> 
+                <field name="name"/>
             </tree>
         </field>
     </record>
@@ -28,6 +28,9 @@
             <search>
                 <field name="matricule"/>
                 <field name="name"/>
+                <group expand="0" string="Group by">
+                    <filter string="name" name="group_by_name" context="{'group_by':'name'}" />
+                </group>
             </search>
         </field>
     </record>

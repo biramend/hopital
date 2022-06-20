@@ -12,3 +12,4 @@ class Medecin(models.Model):
     name = fields.Char(
         string="Nom",
     )
+

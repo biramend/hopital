@@ -44,6 +44,11 @@
                             <field name="consultation_ids" widget="many2many_tags"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Mode d'Utilisation" name="utilisation">
+                            <field name="utilisation"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
